@@ -1,0 +1,40 @@
+Using diff to Find Bugs
+Mit den Befehlen diff unter Linux, Mac oder cp unter Windowssystemen können zwei Files verglichen werden. 
+Dabei werden unterschiedliche Stellen angezeigt. So sind Fehler oder Änderungen im Code leicht auffindbar.
+
+How could having easy access to the entire history of a file make you a more efficient programmer in the long term?
+Es können jederzeit alte Versionen mit neuen verglichen und Änderungen festgestellt werden.
+Falls eine alte Version wieder benötigt wird, lässt sie sich einfach wiederherstellen.
+Man sieht wer was in welcher Version gemacht hat.
+
+
+Manual Comit:
+What do you think are the pros and cons of manually choosing when to create a commit, like you do in Git, vs having versions automatically saved, like Google Docs does?
+Man kann selber bestimmen, wann man commitet
+Der Commit ist nicht zu groß und hat genau einen logischen Zweck
+Das Commit Logfile wird dadurch übersichtlicher und lässt sich leichter mit alten Versionen vergleichen
+
+Multi-File Commit:
+Why do you think some version control systems, like Git, allow saving multiple files in one commit, while others, like Google Docs, treat each file separately?
+Wenn mehrere Dateien zusammengehören und voneinander abhängig sind, kann man auf diese Weise alle auf einmal commiten.
+Bei einem Versionvergleich werden gleich alle Änderungen in den verschiedenen Files angezeigt.
+
+git clone url
+
+
+Using Git to View History:
+How can you use the commands git log and git diff to view the history of files?
+==============================
+Mit git log erhält man eine Liste von Commits. Anhand der Beschreibung sieht man wer, was, wann geändert hat. Vergleicht man mit git diff id_old id_new zwei Commits, werden die Unterschiede dieser zwei Versionen angezeigt, zB ob Code Zeilen hinzu oder entfernt wurden.
+
+Confidence from Version Control:
+How might using version control make you more confident to make changes that could break something?
+Da man jederzeit eine alte Version wiederherstellen kann, erlaubt dies viel auszuprobieren ohne Angst haben zu müssen etwas kaputt zu machen.
+git checkout id
+
+Now that you have your workspace set up, what do you want to try using Git for?
+Ich will Git für unser nächstes Spieleprojekt einsetzen.
+
+
+
+
