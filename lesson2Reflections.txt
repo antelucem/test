@@ -1,0 +1,16 @@
+Initializing a Repository
+What happens when you initialize a repository? Why do you need to do it?
+Mit git init wird ein versteckter Gitordner im aktuellen Ordner (Working Directory) erstellt, in dem man sich gerade befindet. Der Git Ordner enthält alle Infos bzw Konfigurationen, die ein funktionierendes Repository benötigt.
+Es wird aber noch kein Commit (=Snapshot) durchgeführt.
+git status zeigt eine Übersicht des Repositorys und Working Directorys an.
+
+staging area
+How is the staging area different from the working directory and the repository? What value do you think it offers?
+Damit nicht jede Datei einzeln commitet werden muss, fügt man diese zunächst der Staging Area hinzu um sie anschließend in einem Rutsch zu committen. Dies hat den Vorteil, dass man auswählen kann welche Datei in das Repo aufgenommen werden soll.
+Die Staging Area ist quasi die Stufe zwischen Repo und Working Directory.
+
+git init
+git add
+git status
+staging area
+working directory
