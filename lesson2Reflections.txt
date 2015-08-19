@@ -1,6 +1,7 @@
 Initializing a Repository
 What happens when you initialize a repository? Why do you need to do it?
-Mit git init wird ein versteckter Gitordner im aktuellen Ordner (Working Directory) erstellt, in dem man sich gerade befindet. Der Git Ordner enthält alle Infos bzw Konfigurationen, die ein funktionierendes Repository benötigt.
+Mit git init wird ein versteckter Gitordner im aktuellen Ordner (Working Directory) erstellt, in dem man sich gerade befindet. 
+Der Git Ordner enthält alle Infos bzw Konfigurationen, die ein funktionierendes Repository benötigt.
 Es wird aber noch kein Commit (=Snapshot) durchgeführt.
 git status zeigt eine Übersicht des Repositorys und Working Directorys an.
 
@@ -9,8 +10,46 @@ How is the staging area different from the working directory and the repository?
 Damit nicht jede Datei einzeln commitet werden muss, fügt man diese zunächst der Staging Area hinzu um sie anschließend in einem Rutsch zu committen. Dies hat den Vorteil, dass man auswählen kann welche Datei in das Repo aufgenommen werden soll.
 Die Staging Area ist quasi die Stufe zwischen Repo und Working Directory.
 
-git init
-git add
-git status
-staging area
-working directory
+Commit Size
+How can you use the staging area to make sure you have one commit per logical change?
+Verschiebt man nur die veränderten Dateien auf die Staging Area, die zusammengehören, erhält man einen einheitlichen commit.
+Mit git diff können Veränderungen zwischen Dateien im Working Directory und der Staging Area verglichen werden.
+Mit git diff --staged können Veränderungen zwischen Dateien im aktuellesten Commit und der Staging Area verglichen werden.
+
+commit message style
+type: subject
+[body] for what and why explanation
+[footer] for tracker IDs
+
+type:
+feat: a new feature
+fix: a bug fix
+docs: changes to documentation
+style: formatting, missing semi colons, etc; no code change
+refactor: refactoring production code
+test: adding tests, refactoring test; no production code change
+chore: updating build tasks, package manager configs, etc; no production code change
+
+When to Use Branches
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+Mit git branch sieht man eine Übersicht aller Labels und in welchem man sich befindet
+Mit git branch beispiel erstellt man ein neues Label.
+Mit git checkout beispiel wechselt man in das neue Label
+
+Branches sind nützlich, falls verschiedene Versionen des Projekt entwickelt werden sollen, oder zb eine Version für das Testen neuer
+ Features angelegt werden soll.
+ Gründe: new feature, new contentswitch, bugfix
+ Arten: master, development, experimental, feature branch
+ 
+ Visualizing with Diagrams
+ How do the diagrams help you visualize the branch structure?
+Ein Baumdiagram einer Branchstruktur zeigt, die auf einander aufbauenden Commitknoten und Verzweigungen zu anderen Branches. 
+Führt man ein Commit aus ohne eine neue Verzweigung anzulegen und wechselt in einen früheren Zweig, so wird dieser Commit unerreichbar.
+git log --graph --oneline branch1 branch2
+
+Merging Two Branches
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+Mit git merge branch1 branch2 werden zwei Branches zusammengeführt, wobei immer der Zweig weitergeführt wird, der gerade checkedout/aktuell ist.
+Gibt es einen Konflikt, kann man mit git merge --abort den merge rückgängig machen und muss der Konflikt manuell gelöst werden.
+Mit git branch -d label wird das Label des alten Branches gelöscht.
+Zusammengeführte Zweige führen wieder zu einem einzelnen kompletten Projekt. So sieht man in einem Baumdiagramm welche Commits, die eines alten Zweiges waren. In der History werden die Commits nach dem Zeitstempel sotiert.
