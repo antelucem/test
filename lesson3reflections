@@ -1,0 +1,7 @@
+Using a remote repository
+When would you want to use a remote repository rather than keeping all your work local?
+Man verwendet ein online Repo, wenn an dem Projekt mehrere Personen an unterschiedlichen Orten oder Zeiten arbeiten, oder man das Projekt anderen zur Verfügung stellen will.
+
+Remote Repo anlegen mit git remote add origin branch https://github...
+Mit git remote -v kann nachgesehen werden ob ein remote repo existiert
+Mit git push remote origin master wird der asugewählte branch auf das online repo geladen.
